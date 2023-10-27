@@ -1,12 +1,7 @@
-import solutions.easy.containsDuplicate
-import solutions.easy.isAnagram
-import solutions.easy.romanToInt
+import solutions.medium.groupAnagrams
 
 
 fun main() {
 
-
-
-
-    println(  isAnagram("aacc","ccac"))
+    println(groupAnagrams(arrayOf("eat", "tea", "tan", "ate", "nat", "bat")))
 }

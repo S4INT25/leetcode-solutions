@@ -23,16 +23,12 @@ fun sumOfTwo(nums: IntArray, target: Int): IntArray {
 
     val hashMap = HashMap<Int, Int>()
 
-    val res = mutableListOf<Int>()
-
     for (i in nums.indices) {
         val requiredNumber = target - nums[i]
         if (hashMap.containsKey(requiredNumber)) {
-            res.add(i)
-            res.add(hashMap.getOrElse(requiredNumber) { 0 })
-            break
+            return  intArrayOf(i, requiredNumber)
         }
-        hashMap[nums[i]] = i
+            hashMap[nums[i]] = i
     }
-    return res.toIntArray()
+    return intArrayOf()
 }
