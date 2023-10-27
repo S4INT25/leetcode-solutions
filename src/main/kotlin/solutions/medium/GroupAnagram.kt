@@ -22,19 +22,17 @@ package solutions.medium
 
 fun groupAnagrams(strs: Array<String>): List<List<String>> {
 
-    val groupedItems = mutableMapOf<String, MutableList<String>>()
+    val groupedItems = mutableMapOf<String, MutableList<String>>().apply {
 
-    for (i in strs) {
-
-        val sorted = i.toList().sorted().toString()
-        if (groupedItems.containsKey(sorted)) {
-            groupedItems[sorted]?.add(i)
-            continue
+        for (it in strs) {
+            val sorted = String(it.toCharArray().sortedArray())
+            if (!this.containsKey(sorted)) {
+                this[sorted] = mutableListOf()
+            }
+            this[sorted]?.add(it)
         }
-        groupedItems[sorted] = mutableListOf(i)
     }
-
-        return groupedItems.map { it.value }
+    return groupedItems.map { it.value }
 
 }
 
