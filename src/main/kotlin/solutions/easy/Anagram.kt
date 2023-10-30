@@ -30,6 +30,6 @@ fun isAnagram(s: String, t: String): Boolean {
     if (s.length != t.length) {
         return false
     }
-    return s.toList().sorted() == t.toList().sorted()
+    return String(s.toCharArray().sortedArray()) == String(t.toCharArray().sortedArray())
 
 }
